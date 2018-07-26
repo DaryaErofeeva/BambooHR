@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_file"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.griddynamics.bamboohr.time_off.MainFragment"
+        android:label="MainFragment">
+        <deepLink app:uri="https://griddynamics.bamboohr.com/home" />
+        <action
+            android:id="@+id/action_mainFragment_to_signInFragment2"
+            app:popUpTo="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.griddynamics.bamboohr.time_off.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in">
+        <deepLink app:uri="https://griddynamics.bamboohr.com/"/>
+    </fragment>
+    <fragment
+        android:id="@+id/timeOffRequestFragment"
+        android:name="com.griddynamics.bamboohr.time_off.TimeOffRequestFragment"
+        android:label="fragment_time_off_request"
+        tools:layout="@layout/fragment_time_off_request">
+        <deepLink app:uri="https://griddynamics.bamboohr.com/time_off/requests/create"/>
+        <action
+            android:id="@+id/action_timeOffRequestFragment_to_signInFragment2"
+            app:destination="@id/signInFragment" />
+    </fragment>
+</navigation>
